@@ -36,7 +36,8 @@ build:
     - "gradio"
 
   # commands run after the environment is setup
-  #run:
+  run:
+    -"git+https://github.com/facebookresearch/audiocraft"
     # - "echo another command if needed"
 
 # predict.py defines how predictions are run on your model
