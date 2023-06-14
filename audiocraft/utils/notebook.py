@@ -3,7 +3,15 @@
 #
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
+from cog import BaseModel, BasePredictor, Input, Path
+class Output(BaseModel):
+    """
+    Output class for riffusion predictions
+    """
 
+    audio: Path
+    spectrogram: Path
+    error: T.Optional[str] = None
 try:
     import IPython.display as ipd  # type: ignore
 except ImportError:
@@ -27,6 +35,6 @@ def display_audio(samples: torch.Tensor, sample_rate: int):
     samples = samples.detach().cpu()
     if samples.dim() == 2:
         samples = samples[None, ...]
-
+    Output(audio=Path(output_wav_file),
     for audio in samples:
-        ipd.display(ipd.Audio(audio, rate=sample_rate))
+        Output(audio=audio)
