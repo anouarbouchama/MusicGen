@@ -36,7 +36,7 @@ build:
     - "gradio"
 
   # commands run after the environment is setup
-   run:
+run:
      - "unset LD_LIBRARY_PATH"
     # - "echo another command if needed"
 
