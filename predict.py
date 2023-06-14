@@ -5,7 +5,7 @@ import torch
 
 
 def predict(duration,prompt):
-  model = musicgen.MusicGen.get_pretrained('medium')
+  model = musicgen.MusicGen.get_pretrained('medium', device='cuda')
   model.set_generation_params(duration=duration)
   prompts=[prompt]
   res = model.generate(prompts, progress=True)
