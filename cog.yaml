@@ -37,7 +37,7 @@ build:
 
   # commands run after the environment is setup
   # run:
-    # - "echo env is ready!"
+     - "unset LD_LIBRARY_PATH"
     # - "echo another command if needed"
 
 # predict.py defines how predictions are run on your model
