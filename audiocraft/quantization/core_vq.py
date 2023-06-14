@@ -7,7 +7,7 @@
 import typing as tp
 
 from einops import rearrange, repeat
-import flashy
+#import flashy
 import torch
 from torch import nn, einsum
 import torch.nn.functional as F
@@ -137,7 +137,7 @@ class EuclideanCodebook(nn.Module):
         self.cluster_size.data.copy_(cluster_size)
         self.inited.data.copy_(torch.Tensor([True]))
         # Make sure all buffers across workers are in sync after initialization
-        flashy.distrib.broadcast_tensors(self.buffers())
+        #flashy.distrib.broadcast_tensors(self.buffers())
 
     def replace_(self, samples, mask):
         modified_codebook = torch.where(
@@ -155,7 +155,7 @@ class EuclideanCodebook(nn.Module):
 
         batch_samples = rearrange(batch_samples, "... d -> (...) d")
         self.replace_(batch_samples, mask=expired_codes)
-        flashy.distrib.broadcast_tensors(self.buffers())
+        #flashy.distrib.broadcast_tensors(self.buffers())
 
     def preprocess(self, x):
         x = rearrange(x, "... d -> (...) d")
