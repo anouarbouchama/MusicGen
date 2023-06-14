@@ -37,7 +37,7 @@ build:
 
   # commands run after the environment is setup
   run:
-    -"git+https://github.com/facebookresearch/audiocraft"
+    -"!python3 -m pip install -U git+https://github.com/facebookresearch/audiocraft#egg=audiocraft"
     # - "echo another command if needed"
 
 # predict.py defines how predictions are run on your model
