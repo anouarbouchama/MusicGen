@@ -36,8 +36,8 @@ build:
     - "gradio"
 
   # commands run after the environment is setup
-run:
-     - "unset LD_LIBRARY_PATH"
+  run:
+    - "unset LD_LIBRARY_PATH"
     # - "echo another command if needed"
 
 # predict.py defines how predictions are run on your model
