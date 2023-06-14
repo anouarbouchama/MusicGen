@@ -35,6 +35,5 @@ def display_audio(samples: torch.Tensor, sample_rate: int):
     samples = samples.detach().cpu()
     if samples.dim() == 2:
         samples = samples[None, ...]
-    Output(audio=Path(output_wav_file),
     for audio in samples:
         Output(audio=audio)
