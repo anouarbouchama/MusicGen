@@ -17,7 +17,7 @@ build:
   python_packages:
     - "av"
     - "einops"
-    - "flashy==0.0.1"
+    #- "flashy==0.0.1"
     - "hydra-core==1.1"
     - "hydra_colorlog"
     - "julius"
